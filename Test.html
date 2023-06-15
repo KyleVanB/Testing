@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GA4 Knowledge Assessment</title>
+    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe91kXdzxyY3ClW4OOPxpVahJELMgixjOyLg&usqp=CAU');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 70vh; /* Adjust the height value as needed */
+        }
+
+        h1 {
+            color: black;
+            margin-top: 0;
+        }
+
+        p {
+            color: black;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #no-button {
+            background-color: red;
+            color: white;
+        }
+
+        #yes-button {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GA4 Knowledge Assessment</h1>
+        <p>Are you ready to begin?</p>
+        <div>
+            <a id="no-button" class="button" href="#">No</a>
+            <button id="yes-button" class="button">Yes</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("no-button").addEventListener("click", function() {
+            window.close();
+        });
+
+        document.getElementById("yes-button").addEventListener("mouseover", function() {
+            moveButton();
+        });
+
+        function moveButton() {
+            var button = document.getElementById("yes-button");
+            var buttonRect = button.getBoundingClientRect();
+            var x = Math.random() * (window.innerWidth - buttonRect.width);
+            var y = Math.random() * (window.innerHeight - buttonRect.height);
+            x = Math.max(0, x);
+            y = Math.max(0, y);
+            x = Math.min(window.innerWidth - buttonRect.width, x);
+            y = Math.min(window.innerHeight - buttonRect.height, y);
+            button.style.position = "fixed";
+            button.style.top = y + "px";
+            button.style.left = x + "px";
+        }
+    </script>
+</body>
+</html>
